@@ -104,7 +104,7 @@ function addPDFToPage(className) {
     if (err) throw err;
 
     let theFile = data.toString().split("\n");
-    theFile.splice(34);
+    theFile.splice(35);
 
     let dir = `./subjects/${className}/${className}PDF/`;
     let pdfMap = new Map();
