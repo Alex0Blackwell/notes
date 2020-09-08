@@ -70,7 +70,7 @@ Arguments:
 ```
 
 ### Create a Note
-Create a Markdown file with any name. This Markdown file should be in a **<class-name>MD** folder where **<class-name>** is the name of the class you are writing the note for. When the Markdown note is complete, the script to make it a PDF and link it to the website can be run.  
+Create a Markdown file with any name. This Markdown file should be in a **[class-name]MD** folder where **[class-name]** is the name of the class you are writing the note for. When the Markdown note is complete, the script to make it a PDF and link it to the website can be run.  
 
 ```
 node update.js
