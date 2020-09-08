@@ -1,0 +1,20 @@
+
+.note-card {
+  height: 200px;
+}
+
+.inner-note-card {
+  padding-top: 15px;
+  margin: 10px;
+  background-color: #baffd2;
+  height: 180px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.inner-note-card:hover {
+  margin: 5px;
+  height: 190px;
+  background-color: #ccf3ff;
+  cursor: pointer;
+}

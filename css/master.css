@@ -1,0 +1,19 @@
+.subject-card {
+  height: 200px;
+}
+
+.inner-subject-card {
+  padding-top: 15px;
+  margin: 10px 0;
+  background-color: #baffd2;
+  height: 180px;
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.inner-subject-card:hover {
+  margin: 5px;
+  height: 190px;
+  background-color: #ccf3ff;
+  cursor: pointer;
+}
