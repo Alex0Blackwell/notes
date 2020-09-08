@@ -70,7 +70,14 @@ async function getNewMDFiles(srcName) {
 
 
 function generateLink(subject, fileName) {
-  let element = `\n\t\t\t\t<div class="col-lg-4 col-6">\n\t\t\t\t\t<div class="inner-note-card" onclick="location.href='./${subject}PDF/${fileName}.pdf'">\n\t\t\t\t\t\t<h4>Click to view <b>${fileName}.pdf</b></h4>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n`
+  let element = `
+        <div class="col-lg-4 col-6">
+          <div class="inner-note-card" onclick="location.href='./${subject}PDF/${fileName}.pdf'">
+            <h4>Click to view <b>${fileName}.pdf</b></h4>
+            <h1><i class="fas fa-scroll"></i></h1>
+          </div>
+        </div>
+        `
 
   return element;
 }
@@ -97,7 +104,7 @@ function addPDFToPage(className) {
     if (err) throw err;
 
     let theFile = data.toString().split("\n");
-    theFile.splice(25);
+    theFile.splice(33);
 
     let dir = `./subjects/${className}/${className}PDF/`;
     let pdfMap = new Map();
@@ -140,29 +147,9 @@ function addPDFToPage(className) {
 async function main() {
   let subjects = ["bus232", "cmpt225", "macm201", "math240", "phil105"];
 
-  if(process.argv[2] == "-a" || process.argv[2] == "--all") {
-    // allow the user to update all the md files to pdf's
-    let allFiles = await getAllMD();
-
-    let filesToUpdate = [];
-    for(let i = 0; i < allFiles.length; ++i) {
-      for(let j = 0; j < allFiles[i].length; ++j) {
-        if(allFiles[j])
-          filesToUpdate.push(`./subjects/${subjects[i]}/${subjects[i]}MD/${allFiles[i][j]}`);
-      }
-    }
-
-    generatePDF(filesToUpdate);
-
-    for(let i = 0; i < subjects.length; ++i) {
-      addPDFToPage(subjects[i]);
-    }
-
-    console.log(`Finished generating ${filesToUpdate.length} file(s).`);
-    // the pdf files are now generated and we have to link them from the website
-
-  } else {
+  if(process.argv[2] == "-n" || process.argv[2] == "--new") {
     // automatically detect new md files and compile those
+    // This can be used to speed up compilation time
     var classesToUpdate = [];
     for(let i = 0; i < subjects.length; ++i)
       classesToUpdate.push(false);
@@ -190,6 +177,36 @@ async function main() {
       if(classesToUpdate[i])
         addPDFToPage(subjects[i]);
     }
+  }
+  else if(process.argv[2] == "-h" || process.argv[2] == "--help") {
+    console.log(`
+Notes - v-0.0.1-alpha (2020 Sept. 8)
+
+Usage: node update.js [arguments]
+converts Markdown to PDF and adds PDF's to website.
+
+Arguments:
+-n  or  --new:     Compile newly added Markdown files to PDF and update website
+-h  or  --help:    Print Help (this message) and exit`);
+  } else {
+    // Update all PDF files
+    let allFiles = await getAllMD();
+
+    let filesToUpdate = [];
+    for(let i = 0; i < allFiles.length; ++i) {
+      for(let j = 0; j < allFiles[i].length; ++j) {
+        if(allFiles[j])
+          filesToUpdate.push(`./subjects/${subjects[i]}/${subjects[i]}MD/${allFiles[i][j]}`);
+      }
+    }
+
+    generatePDF(filesToUpdate);
+
+    for(let i = 0; i < subjects.length; ++i) {
+      addPDFToPage(subjects[i]);
+    }
+
+    console.log(`Finished generating ${filesToUpdate.length} file(s).`);
   }
 }
 
