@@ -104,7 +104,7 @@ function addPDFToPage(className) {
     if (err) throw err;
 
     let theFile = data.toString().split("\n");
-    theFile.splice(33);
+    theFile.splice(34);
 
     let dir = `./subjects/${className}/${className}PDF/`;
     let pdfMap = new Map();
@@ -123,7 +123,8 @@ function addPDFToPage(className) {
     }
 
     if(isEmpty) {
-      theFile += `\n</div>
+      theFile += `
+    </div>
 		</div>
     <div class="text-center">
       <img src="../../img/alex-guitar-empty.png" alt="image">
