@@ -97,7 +97,7 @@ function addPDFToPage(className) {
     if (err) throw err;
 
     let theFile = data.toString().split("\n");
-    theFile.splice(23);
+    theFile.splice(25);
 
     let dir = `./subjects/${className}/${className}PDF/`;
     let pdfMap = new Map();
@@ -108,9 +108,20 @@ function addPDFToPage(className) {
     theFile = theFile.join("\n");
 
 
+    let isEmpty = true;
     for(const [key, value] of pdfMap.entries()) {
+      isEmpty = false;
       let el = generateLink(className, key);
       theFile += el;
+    }
+
+    if(isEmpty) {
+      theFile += `\n</div>
+		</div>
+    <div class="text-center">
+      <img src="../../img/alex-guitar-empty.png" alt="image">
+      <h4>bow wow dudu deedoo</h4>
+      <i>(It's coming I swear)</i>`
     }
 
     theFile += `\n\t\t\t</div>\n\t\t</div>\n\t</body>\n</html>`
