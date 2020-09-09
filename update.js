@@ -73,7 +73,7 @@ function generateLink(subject, fileName) {
   let element = `
         <div class="col-lg-4 col-6">
           <div class="inner-note-card" onclick="location.href='./${subject}PDF/${fileName}.pdf'">
-            <h4>Click to view <b>${fileName}.pdf</b></h4>
+            <h4>Click to view<br><b>${fileName}.pdf</b></h4>
             <h1><i class="fas fa-scroll"></i></h1>
           </div>
         </div>

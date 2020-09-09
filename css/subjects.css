@@ -18,6 +18,7 @@ img:hover {
   width: 340px;
 }
 
+
 .note-card {
   height: 200px;
 }
@@ -39,4 +40,11 @@ img:hover {
   background-color: #FFBAE7;
   box-shadow: 5px 5px 18px #888888;
   cursor: pointer;
+}
+
+
+@media only screen and (max-width: 600px) {
+  h4 {
+  font-size: 15px !important;
+  }
 }
