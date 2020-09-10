@@ -1,7 +1,7 @@
 # Chapter 1: Linear Equations in linear algebra
 
-Systems can have solutions. Namely, **exactly one solution**, **no solution**, or **infinitely many solutions**. Make simpler equivalent systems and solve those row equivalent matrixes.
 ## Summary
+Systems can have solutions. Namely, **exactly one solution**, **no solution**, or **infinitely many solutions**. Make simpler equivalent systems and solve those row equivalent matrixes.
 
 ## Terminology
 
