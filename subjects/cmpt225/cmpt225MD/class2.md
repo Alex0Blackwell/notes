@@ -1,4 +1,4 @@
-# Class 2
+# Class 2 - Lists and ADT's
 
 ## Summary
 An ADT hides the implementation. A list ADT can contain many different elements and has different methods to operate on those methods.

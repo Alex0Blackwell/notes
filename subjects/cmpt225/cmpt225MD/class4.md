@@ -1,4 +1,4 @@
-# Class4
+# Class4 - Stacks
 
 ## Summary
 A stack is a dynamic data structure that follows a LIFO order.
@@ -37,27 +37,62 @@ return False
 
 > ADT that stores a collection of objects in Last-In-First-Out order
 
-Necessary
+Necessary / Fundamental Operations:
 `push(x)`: inserts an element at the top
 `pop(x)`: removes an element at the top
 
 Convenient:
-`isEmpty()`: check for emptiness
+`empty()`: check for emptiness
+- could just get people to use size() == 0 but this method improves our code
+
+
 `size()`: return number of elements on stack
 `top()`: return top, but don't remove it
+- Could just `x <- pop(); push(x);  // use x` but this makes the code simpler and clearer
+
+
+Examples of Stack:
+- undo button / redo button
+- backwards / forwards buttons in browsers
+
 
 Stack based algorithms for checking grouping symbols
-```py
+```c
+// I is an input stream of symbols
 S <- new stack
-while there are symbols to read
-  c <- next symbol
-  if e is a left symbol
+while there are symbols to read from I
+  c <- next symbol from I
+  if e is a left grouping symbol
     push c on S
-  else
-    if S is empty report error
+  else if c is a right grouping symbol
+    if S is empty report error and stop
     d <- pop S
-    if c,d do not match report error
-  end while
-  if S is not empty report error
-  report "ok"
+    if c,d dont match report error and stop
+end while
+if S is not empty report error
+report "ok"
 ```
+
+### Stack: Partially-Filled Array Implementation
+
+Variables:
+A - Array of stack elements
+capacity - size of array
+top - index in array of top stack element (-1 if stack is empty)
+
+### Stack: Linked list implementation
+***Which end should be the top?***
+push: insert at top = front of the list
+pop: remove from top = remove from front of list
+
+### Complexity of Operations
+Linked list: push and pop both take constant time
+
+array: pop takes constant time
+push takes constant time - but assuming the stack size remains smaller than the array
+
+In both implementations:
+- top requires constant time
+- size and empty require constant time if we keep track of the size
+
+Q: what would you do so an array-based implementation would not have a fixed maximum stack size? How would it affect complexity of operations?

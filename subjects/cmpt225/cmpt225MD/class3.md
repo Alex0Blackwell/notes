@@ -1,5 +1,5 @@
 
-# Class 2
+# Class 3 - Lists
 
 ## Summary
 **Lists** are simple, however, creating a good list can be difficult. One way to create a list is to use the first few elements of an **array**. A more popular method is to use a **dynamic data structure** that utilizes **pointers** to link many objects of a fixed size.
@@ -45,3 +45,4 @@ Implementation: A is a fixed size contiguous sequence of memory locations, each 
 #### Simplist - Linked List:
 eg for `L = [1,3,2]`
 Each contain a `val` and a `next`
+We use pointers because there are a fixed amount of names that can be in our program.
