@@ -24,6 +24,19 @@ Experimental units
 Treatment / factor
 - In an experiment we do something to the subject and measure the response. The something we do is called a treatment or factor
 
+Control
+- a situation where no treatment is administered
+
+Placebo
+- a fake treatment, such as a suger pill
+
+alternating allocation
+- randomly choose one. give to group one.
+- randomly choose another. give to group two.
+
+block / stratefied design.
+- subjects divided into groups prior to experiments to test hypotheses.
+- eg) split into men and women. Because there may be differences
 
 
 ### Ways to get data
@@ -95,3 +108,21 @@ These numbers will give the id's that we will use.
 observational studies based on sampling give **information** about a population but don't establish **causality**.
 
 Properly designed experiments **can** establish **causality**
+
+### Comparative experiments
+experiments are comparative in nature.
+
+### Completely randomized designs
+Individuals are randomly assigned to groups, then the groups are randomly assigned to treatments.
+- select 15 rats out of 30, this way you only need to look for 15 numbers
+
+### Bias and variability
+Samples are not perfect information so there will be a percent error.
+
+Bias and variability are not the same.
+Bias is the difference to the actual value.
+- problem with the sample
+
+Variability is how different the outcome is.
+- not enough data
+- if sample size is small, then variability is high
