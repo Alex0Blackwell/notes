@@ -29,3 +29,6 @@ Uses rotations to balance.
 **2 inside cases** *(two rotations)*
 - left right
 - right left
+
+With insertion you can cause a bunch of nodes to become unbalanced but with a single fix you fix the whole tree.
+With deletion you cause only one node to become unbalanced but fixing this node can cause other nodes to become unbalanced.
